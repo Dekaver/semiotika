@@ -15,6 +15,10 @@ class CreatePembicaraTable extends Migration
     {
         Schema::create('pembicara', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_semiotika')
+                ->constrained('semiotika')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->string('nama');
             $table->timestamps();
         });

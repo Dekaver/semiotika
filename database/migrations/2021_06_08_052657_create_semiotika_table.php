@@ -15,12 +15,15 @@ class CreateSemiotikaTable extends Migration
     {
         Schema::create('semiotika', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid')->unique();
+            $table->string('periode');
+            $table->string('lokasi');
+            $table->string('gps');
             $table->time('waktu');
             $table->date('Tanggal');
             $table->longText('Tentang');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->text('deskripsi_pendaftaraan');
+            $table->string('link_pendaftaraan');
+            $table->timestamps();
         });
     }
 

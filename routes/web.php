@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SemiotikaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +32,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('semiotika', SemiotikaController::class)->shallow();

@@ -15,6 +15,10 @@ class CreateTglPentingTable extends Migration
     {
         Schema::create('tgl_penting', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_semiotika')
+                ->constrained('semiotika')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
             $table->string('nama');
             $table->date("tanggal");
             $table->timestamps();
