@@ -56,7 +56,7 @@
             <x-button class="form-control" type="submit">SAVE</x-button>
         </x-form>
     </x-card>
-    <script src="{{ asset('/storage/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace( 'summary-ckeditor' );
     </script> 

@@ -17,6 +17,5 @@
 <script src="{{asset('/libs/chart-am4/animated.js')}}"></script>
 
 <!-- Demo -->
-<script src="{{asset('/js/demo.js')}}"></script>
 <script src="{{asset('/js/analytics.js')}}"></script>
 <script src="{{asset('/js/pages/dashboards_index.js')}}"></script>

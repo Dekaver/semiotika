@@ -21,7 +21,7 @@
 
 <!-- Core stylesheets -->
 <link rel="stylesheet" href="{{asset('/css/app.css')}}">
-<!-- <link rel="stylesheet" href="assets/css/bootstrap-material.css"> -->
+<link rel="stylesheet" href="{{asset('/css/bootstrap-material.css')}}">
 <link rel="stylesheet" href="{{asset('/css/shreerang-material.css')}}">
 <link rel="stylesheet" href="{{asset('/css/uikit.css')}}">
 
