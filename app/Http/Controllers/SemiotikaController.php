@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Semiotika;
 
 class SemiotikaController extends Controller
 {
@@ -13,7 +14,8 @@ class SemiotikaController extends Controller
      */
     public function index()
     {
-        //
+        $semiotika = Semiotika::all();
+        return view('admin.semiotika.semiotika', compact('semiotika'));
     }
 
     /**
@@ -23,7 +25,7 @@ class SemiotikaController extends Controller
      */
     public function create()
     {
-        return view('admin.semiotika.semiotika_form');
+        return view('admin.semiotika.semiotika_create_form');
     }
 
     /**
@@ -34,7 +36,18 @@ class SemiotikaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Semiotika::create([
+            'periode' => $request->periode,
+            'lokasi' => $request->alamat,
+            'gps' => $request->latitude ." ". $request->longitude,
+            'waktu' => $request->waktu,
+            'Tanggal' => $request->tanggal,
+            'Tentang' => $request->tentang,
+            'deskripsi_pendaftaraan' => $request->deskripsi,
+            'link_pendaftaraan' => $request->link,
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -45,7 +58,8 @@ class SemiotikaController extends Controller
      */
     public function show($id)
     {
-        //
+        $semiotika = Semiotika::find($id);
+        return view('admin.semiotika.semiotika_view', compact('semiotika'));
     }
 
     /**
@@ -56,7 +70,8 @@ class SemiotikaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $semiotika = Semiotika::find($id);
+        return view('admin.semiotika.semiotika_edit_form', compact('semiotika'));
     }
 
     /**
@@ -68,7 +83,18 @@ class SemiotikaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Semiotika::find($id)->update([
+            'periode' => $request->periode,
+            'lokasi' => $request->alamat,
+            'gps' => $request->latitude ." ". $request->longitude,
+            'waktu' => $request->waktu,
+            'Tanggal' => $request->tanggal,
+            'Tentang' => $request->tentang,
+            'deskripsi_pendaftaraan' => $request->deskripsi,
+            'link_pendaftaraan' => $request->link,
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -79,6 +105,9 @@ class SemiotikaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $semiotika = Semiotika::find($id);
+        $semiotika->delete();
+
+        return redirect()->back();
     }
 }
