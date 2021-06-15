@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SemiotikaController;
+use App\Http\Controllers\CkeditorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('semiotika', SemiotikaController::class)->shallow();
+Route::post('ckeditor/upload', [CkeditorController::class, 'upload'])->name('ckeditor-upload');
