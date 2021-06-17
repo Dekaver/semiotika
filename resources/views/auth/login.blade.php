@@ -59,7 +59,7 @@
             <!-- [ Logo ] End -->
 
             <!-- [ Form ] Start -->
-            <form class="my-5">
+            <x-form action="{{route('login')}}" class="my-5" method='POST'>
                 <div class="form-group">
                     <label class="form-label">Email</label>
                     <input type="text" class="form-control">
@@ -73,40 +73,23 @@
                     <input type="password" class="form-control">
                     <div class="clearfix"></div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center m-0">
+                <div class="d-flex justify-content-between align-items-center my-2">
                     <label class="custom-control custom-checkbox m-0">
                         <input type="checkbox" class="custom-control-input">
                         <span class="custom-control-label">Remember me</span>
                     </label>
-                    <button type="button" class="btn btn-primary">Sign In</button>
                 </div>
-            </form>
+                <button type="button" class="w-100 btn btn-primary">Sign In</button>
+            </x-form>
             <!-- [ Form ] End -->
 
             <div class="text-center text-muted">
                 Don't have an account yet?
-                <a href="pages_authentication_register-v1.html">Sign Up</a>
+                <a href="">Sign Up</a>
             </div>
 
         </div>
     </div>
-    <!-- [ content ] End -->
-
-    <!-- Core scripts -->
-    <script src="{{asset('/js/pace.js')}}"></script>
-    <script src="{{asset('/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('/libs/popper/popper.js')}}"></script>
-    <script src="{{asset('/js/bootstrap.js')}}"></script>
-    <script src="{{asset('/js/sidenav.js')}}"></script>
-    <script src="{{asset('/js/layout-helpers.js')}}"></script>
-    <script src="{{asset('/js/material-ripple.js')}}"></script>
-
-    <!-- Libs -->
-    <script src="{{asset('/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
-
-    <!-- Demo -->
-    <script src="{{asset('/js/demo.js')}}"></script>
-    <script src="{{asset('/js/analytics.js')}}"></script>
 </body>
 
 </html>
